@@ -1,0 +1,19 @@
+@use "./reset.scss";
+@use "./header.scss";
+@use "./footer.scss";
+@use "./section3.scss";
+@use "./search.scss";   
+@use "./family-site.scss";
+// @use "./coding.scss";
+// @use "./design.scss";
+// @use "./aboutMe.scss";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { font-family: "Noto Sans KR", sans-serift; }
+html { font-size: 62.5%; }
+body { word-break: keep-all; display: flex; flex-direction: column; font-size: 14px; line-height: 1.5; }
+
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+main { width: 100%; }
+

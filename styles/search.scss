@@ -1,0 +1,43 @@
+        /* 검색 바 스타일 */
+        #searchQuery {      
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #046EB8;
+            border-radius: 10px 0 0 10px;
+            margin-right: -5px;
+            outline: none;
+            text-align: left;
+          width: 100%;
+        }
+
+        /* 버튼 스타일 */
+        .notice_button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #fff;
+            border: 2px solid #046EB8;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 아이콘 스타일 */
+        .material-icons {
+            font-size: 24px;
+            color: #046EB8;
+            font-weight: bold;
+        }
+
+        /* 전체 폼 스타일 */
+      .form-container { width: 100%; display: flex; align-items: center; justify-content: center; }
+        .notice_form {
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+}
+
+     

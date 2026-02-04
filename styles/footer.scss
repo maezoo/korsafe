@@ -1,0 +1,60 @@
+.wrapper { max-width: 1920px; width: 100%; display: flex; flex-direction: column; margin: 0 auto; }
+
+.hd-call { font-size: 18px; background: #fff; color: #143789; padding: 7px 25px; border-radius: 20px; letter-spacing: 1px; width: 185px; }
+
+
+
+/*footer*/
+.footer_0 { background: #000; color: #909090; font-size: 18px; display: flex; align-items: center; justify-content: center; width: 100%; margin: 0 auto; font-weight: 600;
+    .go-top {
+        position: absolute; top: -1px; right: 10px; z-index: 10;
+        width: 50px; height: 50px;
+        background: #fff; color: #133789; text-align: center; font-size: 16px; font-weight: bold; line-height: 50px; box-shadow: 0px 1px 6px 5px #0000002e;
+        a {display: block; width: 100%; height: 100%; }
+    }
+    .ft-inner { max-width: 1200px; width: 100%; display: flex; gap: 30px; padding-top: 40px; padding-bottom: 50px; position: relative; }
+    .ft-logo{ display: flex; flex-direction: column;}
+    .ft-logo img { width: 250px; }
+    .ft-logo p {color: #909090; font-size: 12px;}
+    .ft-info { display: flex; flex-direction: column; gap: 40px; }
+    .policy { display: flex; align-items: center; gap: 20px; justify-content: flex-start;
+        a { color: #fff; }
+    }
+    .contact { display: flex;/* max-width: 500px;*/ flex-wrap: wrap; justify-content: flex-start; column-gap: 15px; row-gap: 10px; font-size: 16px;}
+    .ft-dot { width: 2px; height: 2px; background: #c6c6c6; border-radius: 50%; }
+}
+.mail-detail { display: flex; gap: 15px; margin-bottom: 0px; }
+.mail-detail li{min-width: 285px;}
+.ft-select{ position: absolute; top: 40px; right: 0; }
+.footer_0 .policy a p {margin-bottom: 0px;}
+
+
+
+/* 반응형 시작 */    
+@media only all and (max-width: 1024px) {
+  
+      
+      /*푸터 시작*/
+      .ft-inner { padding: 30px 20px 40px;}
+       .footer_0 .ft-logo{align-items: center;}
+      .footer_0 .ft-inner { flex-direction: column; gap: 15px; align-items: center;}
+      .footer_0 .ft-info { align-items: center;gap: 20px; }
+      .footer_0 .contact { justify-content: center; row-gap: 8px; font-size: 14px;}
+      .footer_0 .go-top {font-size: 14px;}
+      .mail-detail { flex-direction: column; width: 100%; align-items: center;  gap: 8px; text-align: center; }
+.ft-select .section { padding: 0px; }
+.ft-select{position: static;}
+      /*푸터 끝*/
+  
+}
+
+
+@media only all and (max-width: 480px) {
+       /*푸터 시작*/
+    .hd-top { font-size: 10px; flex-direction: column; align-items: flex-start; gap: 0; }
+  .footer_0 {font-size: 16px;}
+      /*푸터 끝*/
+    }
+
+
+/* 반응형 끝 */    

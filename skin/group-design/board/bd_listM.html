@@ -1,0 +1,73 @@
+테스트입니다
+
+{@
+	$program_set[board_code] = $var_set[code]; // 게시판 코드를 입력. 대소문자 구분
+	$program_set[cate_sub_idx] = $var_set[category_idx]; // 게시판 카테고리 IDX 값
+	$program_set[group_code] = $var_set[group_code]; // 게시판 그룹코드
+	$program_set[main_code] = $var_set[main_code]; // [커뮤니티 》 게시판 관리 》 게시물 메인출력 관리]에서 등록한 그룹 코드
+	$program_set[img_exists_yn] = $var_set[print]; // 이미지 있는것만 출력:Y, 이미지 없는것만 출력:N, 모두 출력:ALL
+	$program_set[limit] = $var_set[limit]; // 출력수 (1~999)
+	$program_set[order_type] = $var_set[sort]; // 정렬 방식. 기본정렬:DEFAULT, 조회수순:VIEW, 덧글수:COMMENT, 랜덤:RAND
+	$program_set[img_thumb_w] = $var_set[width]; // 썸네일 이미지 가로크기
+	$program_set[img_thumb_h] = $var_set[height]; // 썸네일 이미지 세로크기
+	$program_set[img_thumb_type] = $var_set[thumnail_type]; // 썸네일 이미지 생성방식 (1:일반 이미지축소, 2:위 사이즈보다 큰경우 잘라내기)
+	$new_board_final_row = program_load(NEW_BOARD_FINAL);
+@}
+
+<style>
+	.pm-board_list_{$this_group_code} ul {margin:0;padding:0;list-style:none;border-bottom:2px solid #000000;}
+	.pm-board_list_{$this_group_code} li {border-bottom:1px solid #e2e5e7;font-size:13px;line-height:1.6em}
+	.pm-board_list_{$this_group_code} li:first-child {/*border-top:1px solid #a40d5e*/}
+  .pm-board_list_{$this_group_code} li:first-child dt{    font-weight: 800;}
+   .pm-board_list_{$this_group_code} li:first-child dd {font-weight: 800;}
+	.pm-board_list_{$this_group_code} a {display:block;color:#333;padding:20px 8px;    }
+  	.pm-board_list_{$this_group_code} a:hover { /*border :3px solid #a40d5e;  border-radius: 20px;*/ background:#e2e5e7;  }
+	.pm-board_list_{$this_group_code} dl {position:relative;margin:0;}
+/* .pm-board_list_{$this_group_code}  li:first-child dd {background:#a40d5e;width: 85px;    height: 85px;    display: flex;    border-radius: 50%;    color: #fff;    font-size: 14px;    align-items: center;    flex-direction: column;    justify-content: center;
+    margin: 0 auto;}*/
+  
+  
+	.pm-board_list_{$this_group_code} dl dt {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color: #333;    font-weight: 500; font-size:18px; width: 400px;}
+  
+	.pm-board_list_{$this_group_code} dl dd {position:absolute;right:0;top:0;margin:0;font-size:16px;font-family:Arial;color:#888}
+	.pm-board_list_{$this_group_code} .comment {font-weight:normal;color:#888}
+	.pm-board_list_{$this_group_code} .empty {padding:10px 8px;font-size:14px;color:#666;text-align:center}
+  
+  
+  /* 모바일 디바이스를 위한 스타일 */
+  @media (max-width: 767px) {
+    .pm-board_list_bd_listM dl dt {
+    	color:white;
+      width: 200px;
+    }
+    .pm-board_list_bd_listM dl dd{
+    	color:white;
+    }
+  }
+</style>
+
+<div class="pm-board_list_{$this_group_code}">
+	<ul>
+		<li loop="$new_board_final_row as $k => $v">
+			<a href="{$v[url_read]}">
+				<dl>
+					<dt>
+						{$v[subject]}
+						<!--@if($v[comment_cnt])-->
+							<span class="comment">({$v[comment_cnt]})</span>
+						<!--@end-->
+						<!--@if($v[new_icon])-->
+							<!--@if($v[new_icon_url])-->
+								<img src="{$v[new_icon_url]}" alt="new">
+							<!--@else-->
+								<img src="/img_up/shop_pds/koreasafeaud/design/copy/ico_new.gif" alt="new">
+							<!--@end-->
+						<!--@end-->
+					</dt>
+					<dd>{$v[reg_date]}</dd>
+				</dl>
+			</a>
+		</li>
+		<li cond="!count($new_board_final_row)" class="empty">등록된 게시글이 없습니다.</li>
+	</ul>
+</div>
