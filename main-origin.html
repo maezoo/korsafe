@@ -1,983 +1,593 @@
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    .re_notice {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 50px 0 100px;
+   .re_notice { width: 100%; display: flex; align-items: center; justify-content: center; margin: 50px 0 100px;}
+ .notice_in_all{ display: grid; grid-template-columns: 1fr 1fr; max-width: 1500px; gap: 20px;width: 100%;}
+   .not-title { font-style: normal; display: flex; color: #fff; font-size: 20px; background: #181D61; align-items: center; justify-content: center; height: 50px; width: 100%; } 
+ .not-title p { margin-bottom: 0; }
+   .not-title img {width: 100%;}
+  .not-1{ display: flex; flex-direction: column; gap: 30px; width: 100%;}
+  .not-2 { display: flex; flex-direction: column; gap: 20px; width: 100%;}
+.not-name { color: #181d61; text-align: center; margin: 0;}
+.not-name strong {  font-weight: bold !important; font-size: 1em; }
+.not-intro {    text-align: center; font-size: 16px; margin: 0; }
+  .not-board{ display: flex; flex-direction: column; gap: 20px; }
+  
+
+
+  
+  
+  .consulting_icon { position: fixed; bottom: 40%; right: 0px; transform: translateY(-40%); background: #fff; padding: 20px 25px 15px; z-index: 11111; 
+    border-radius: 20px 0 0 20px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .3); transition: 0.35s; border: 2px solid #046EB8; border-right: none; }
+  .consulting_icon p{ text-align:center;color:#333 !important;font-size:20px;padding-top:5px;font-weight:600;}
+  .consulting_icon img{width:100%;}
+  .consulting_icon:hover{background:#2946ed}
+  .consulting_icon:hover>p{color:#fff !important;}
+.list_bt_main { display: flex; flex-wrap: wrap; width: 100%; }
+
+.list_bt_main li {
+  background-color: #181d61;
+  width: 270px;
+  margin-bottom: 10px; /* 추가된 부분: 각 항목 사이에 여백을 추가합니다 */
+  margin-right: 10px; /* 각 아이템 사이에 여백을 추가합니다 */
+  flex: 0 0 calc(50% - 10px); /* 아이템의 너비를 50%로 설정하고 여백을 조절합니다 */
+  margin-bottom: 10px; /* 각 아이템 사이에 여백을 추가합니다 */
+}
+
+.list_bt_main .list_bt_main_atag {
+  display: flex; /* 내부 요소를 수평으로 정렬합니다 */
+  align-items: center; /* 내부 요소를 수직 중앙 정렬합니다 */
+  padding: 10px 20px; /* 내부 여백을 지정합니다 */
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.list_bt_main .list_bt_main_atag:hover {
+  background-color: #35458c;
+}
+
+.list_bt_main .list_bt_main_atag p {
+  margin-top: 5%;
+  margin-right: 1em; /* 추가된 부분: 아이콘과 텍스트 사이에 간격을 추가합니다 */
+}
+
+.list_bt_main .list_bt_main_atag img {
+  width: 20px;
+  height: 20px;
+}
+
+.list_bt_main .list_bt_main_atag p {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%; /* 원형 배경을 위한 border-radius 설정 */
+  display: flex; /* 내부 요소를 수평으로 정렬합니다 */
+  justify-content: center; /* 내부 요소를 수평 중앙 정렬합니다 */
+  align-items: center; /* 내부 요소를 수직 중앙 정렬합니다 */
+}
+
+/*              =========== sub ==============              */
+/* 하위 목록 스타일 */
+  
+  
+  
+  /*  2026 리뉴얼 notice 시작*/
+  .list_intro{ width: 100%; display: flex; justify-content: center; align-items: center; margin: 100px 0 100px;}
+  .board-inner{ display: flex; flex-direction: column; gap: 30px; }
+  .not-title-wrapper{ display: flex; flex-direction: column; gap: 5px; }
+.list_bt_sub { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 0;}
+.list_bt_sub li { box-sizing: border-box; width: 100%; height: 50px; background-color: #046eb8; }
+.list_bt_sub a { display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: white; padding: 10px 20px; height: 50px; box-sizing: border-box; }
+    /* 2026 리뉴얼 notice 끝*/
+
+.list_bt_sub a:hover { 
+  width: 100%;
+  background-color: #35458c; /* 버튼 호버시 배경색 변경 */
+}
+  
+.list_bt_sub a h5 {
+  margin: 0; /* h4의 마진 제거 */
+  /* h4의 나머지 스타일을 설정할 수 있습니다. */
+}
+  
+   .business_sect_mobile{
+    display: none;
     }
+  
+/*2024.07.16 notice 수정*/  
+ 	 /*공통*/
+  .main_intro .list_intro{width:100%!important;}
+  .notice_in3{flex:10;}
+ 
 
-    .notice_in_all {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 1500px;
-        gap: 20px;
-        width: 100%;
+  
+  /*a링크 공통*/
+  .notice3_a_link{height:245px;overflow:hidden;background:#fff;}
+  .notice3_a_link a:first-of-type{margin-top:5px;}
+  
+
+
+  
+  /*notice3*/
+  .tab_menu{display:block;}
+   .list_bt_main .notice_title{ /*notice3 em 공통*/
+    font-style:normal;
+    display:flex;
+    padding:10px 10px;
+    color:#fff;
+    font-size:20px;
+    background:#181D61;
+    width:100%;
+    text-align:center;
+    display:block;
+    margin:30px auto 20px;
+  }
+    /*notice_in3번_1*/
+  .notice_in3_1_txt{display:flex;gap:5px;}
+  .notice3_txt1{font-size:18px;color:#046EB8;font-weight: 600;text-align:center;display:block;margin-bottom: 10px;font-style:normal;}/*i 태그 전체*/
+  
+  .notice_txt1_1{flex:1;}
+  .notice_txt1_1 a{display:block;color:#444;background:#fff;padding:5px 10px;padding-left:15px;font-size:14px;}
+  .notice_txt1_1 a:hover{color:#046EB8 !important;}
+  
+  .notice_txt1_2{flex:1;}
+  .notice_txt1_2 a{display:block;color:#444;background:#Fff;padding:5px 10px;padding-left:15px;font-size:14px;;}
+  .notice_txt1_2 a:hover{color:#046EB8 !important;}
+  
+  .notice_txt1_3{flex:1;}
+  .notice_txt1_3 a{display:block;color:#444;background:#fff;padding:5px 10px;padding-left:15px;;font-size:14px;}
+  .notice_txt1_3 a:hover{color:#046EB8 !important;}
+  
+  /*notice_in3번_2*/
+  .notice_in3_2_txt{display:flex;gap:5px;}
+  .notice3_txt1{font-size:18px;color:#046EB8;font-weight: 600;text-align:center;display:block;margin-bottom: 10px;font-style:normal;}/*i 태그 전체*/
+
+  .notice_txt2_1{flex:1;}
+  .notice_txt2_1 a{display:block;color:#444;background:#fff;padding:5px 10px;padding-left:15px;;font-size:14px;}
+  .notice_txt2_1 a:hover{color:#046EB8 !important;}
+
+  .notice_txt2_2{flex:1;}
+  .notice_txt2_2 a{display:block;color:#444;background:#fff;padding:5px 10px;padding-left:15px;;font-size:14px;}
+  .notice_txt2_2 a:hover{color:#046EB8 !important;}
+
+  .notice_txt2_3{flex:1;}
+  .notice_txt2_3 a{display:block;color:#444;background:#fff;padding:5px 10px;padding-left:15px;font-size:14px;;}
+  .notice_txt2_3 a:hover{color:#046EB8 !important;}
+
+  #tab1{margin-top: 50px;}
+  #tab1 img{transform:translateY(110px)}
+  
+  /*mobile 3번*/
+
+     .business_sect_mobile{padding:50% 0 160% !important;margin:0 auto !important;}
+  .sect3R>div{margin-left:0!important;} 
+  
+    .business_sect_mobile .notice_title{ /*notice3 em 공통*/
+    font-style:normal;
+    display:flex;
+    padding:10px 10px;
+    color:#fff;
+    font-size:20px;
+    background:#181D61;
+    width:100%;
+    text-align:center;
+    display:block;
+    margin:30px auto 20px;
+  }
+  .business_sect_mobile .notice3_txt1{color:#046EB8;}
+  .business_sect_mobile .notice3_a_link{height:265px;overflow:hidden;background:#f6f6f6;}
+  .business_sect_mobile a{background:#f6f6f6!important;}
+  
+  
+ /* 1300미만 스타일 */
+    @media (max-width: 1300px) {
+    .cont_area.col-4 img{
+        width: 500px;
+        height: 600px;
+        margin-top: 90%;
+        margin-left: -50%;
     }
-
-    .not-title {
-        font-style: normal;
-        display: flex;
-        color: #fff;
-        font-size: 20px;
-        background: #181D61;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-        width: 100%;
-    }
-
-    .not-title p {
-        margin-bottom: 0;
-    }
-
-    .not-title img {
-        width: 100%;
-    }
-
-    .not-1 {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 100%;
-    }
-
-    .not-2 {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .not-name {
-        color: #181d61;
-        text-align: center;
-        margin: 0;
-    }
-
-    .not-name strong {
-        font-weight: bold !important;
-        font-size: 1em;
-    }
-
-    .not-intro {
-        text-align: center;
-        font-size: 16px;
-        margin: 0;
-    }
-
-    .not-board {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-
-
-
-
-    .consulting_icon {
-        position: fixed;
-        bottom: 40%;
-        right: 0px;
-        transform: translateY(-40%);
-        background: #fff;
-        padding: 20px 25px 15px;
-        z-index: 11111;
-        border-radius: 20px 0 0 20px;
-        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .3);
-        transition: 0.35s;
-        border: 2px solid #046EB8;
-        border-right: none;
-    }
-
-    .consulting_icon p {
-        text-align: center;
-        color: #333 !important;
-        font-size: 20px;
-        padding-top: 5px;
-        font-weight: 600;
-    }
-
-    .consulting_icon img {
-        width: 100%;
-    }
-
-    .consulting_icon:hover {
-        background: #2946ed
-    }
-
-    .consulting_icon:hover>p {
-        color: #fff !important;
-    }
-
-    .list_bt_main {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
+      .list_bt_main {
+        display: block;
+        width: 500px;
+      }
+      	
     .list_bt_main li {
-        background-color: #181d61;
-        width: 270px;
-        margin-bottom: 10px;
-        /* 추가된 부분: 각 항목 사이에 여백을 추가합니다 */
-        margin-right: 10px;
-        /* 각 아이템 사이에 여백을 추가합니다 */
-        flex: 0 0 calc(50% - 10px);
-        /* 아이템의 너비를 50%로 설정하고 여백을 조절합니다 */
-        margin-bottom: 10px;
-        /* 각 아이템 사이에 여백을 추가합니다 */
-    }
+      align-items: left;
+      }
+      
+      .tab_menu{
+      
+      }
+   .new_header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+    background: #fff;
+    padding-bottom: 10px;
+}
+  .toggle_btn {
+    width: 35px;
+    height: 50px;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 999;
+    cursor: pointer;}
+    
+    /*notice*/
+    .notice_in_all{grid-template-columns: 1fr; padding: 60px 20px;}
 
-    .list_bt_main .list_bt_main_atag {
-        display: flex;
-        /* 내부 요소를 수평으로 정렬합니다 */
-        align-items: center;
-        /* 내부 요소를 수직 중앙 정렬합니다 */
-        padding: 10px 20px;
-        /* 내부 여백을 지정합니다 */
-        text-decoration: none;
-        color: #ffffff;
-    }
+    
+     .notice_in3{margin : 0 20px;}
+     
+      .notice_in2_img{width:100%;}
+      .notice3_a_link a:first-of-type{margin-top:20px;}
+		
+      
+      .notice3_txt1 {padding: 10px 0;}
+      .notice_title{margin-top:30px !important;}
+    	/*notice_in2번*/
+  .notice_in2_img{
+    background:url(/img_up/shop_pds/koreasafeaud/design/2024/ju-yo-sil-jeoktab.png) no-repeat center center;
+  	width:600px;height:700px;margin:0 auto;
+  }  
+      /*notice3 */
+      .business_sect {padding:20% 0 !important;}
+      .col-7 {margin-left 20px !important;}
+      .cont_area.col-4 img {
+        width: 500px;
+        height: 600px;
+        margin-top: 0% !important;
+        margin-left: -20% !important;
+      }
+}
+  @media (max-width: 950px){
 
-    .list_bt_main .list_bt_main_atag:hover {
-        background-color: #35458c;
-    }
+    
+        /*notice3 */
+      .business_sect {padding:40% 0 !important;padding-bottom:60% !important;;padding-left:0 !important;}
+    .col-7 {max-width:100% !important;display:block !important;padding-right:0 !important;}
+    .col-7-txt{margin-left:20px !important;}
+    .col-7-txt h2{1rem;}
+    .col-7-txt strong{0.8rem;}
+    .list_bt_main{margin-left 20px !important;}
+      .cont_area.col-4 img {
+        width: 300px;
+        height: 600px;
+        margin-top: 0% !important;
+        margin-left: -15% !important;
+        display: none !important;
+      }
+    .list_bt_main{width:100% !important;}
+    .notice3_a_link{height:280px;}
 
-    .list_bt_main .list_bt_main_atag p {
-        margin-top: 5%;
-        margin-right: 1em;
-        /* 추가된 부분: 아이콘과 텍스트 사이에 간격을 추가합니다 */
+  }      
+      
+/* 모바일 디바이스를 위한 스타일 */
+  @media (max-width: 767px) {
+    .list_bt_sub { flex-direction: column; }
+      .list_intro { background-color: #181d61; color: white; width: 100%; margin: 0px; }
+    .not-name { color: #fff;}
+
+    
+    
+  .business_sect_mobile{
+    display: block;
+    position: relative;
+    margin-top: 100px;
+    margin-left: -5%;
+    background-color: white;
+    height: 400px;
+    }
+   .business_sect {
+     display: none;
+    }
+    .owl-carousel .owl-item img {
+    display: block;
+    width: 1000px;
+    height: 500px;
+    text-align: center;
+}
+    .new_slide_txt{
+    	display:none;
     }
 
     .list_bt_main .list_bt_main_atag img {
-        width: 20px;
-        height: 20px;
+  width: 15px;
+  height: 15px;
+}
+
+.list_bt_main .list_bt_main_atag p {
+  width: 35px;
+  height: 35px;
     }
-
-    .list_bt_main .list_bt_main_atag p {
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 50%;
-        /* 원형 배경을 위한 border-radius 설정 */
-        display: flex;
-        /* 내부 요소를 수평으로 정렬합니다 */
-        justify-content: center;
-        /* 내부 요소를 수평 중앙 정렬합니다 */
-        align-items: center;
-        /* 내부 요소를 수직 중앙 정렬합니다 */
-    }
-
-    /*              =========== sub ==============              */
-    /* 하위 목록 스타일 */
-
-
-
-    /*  2026 리뉴얼 notice 시작*/
-    .list_intro {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 100px 0 100px;
-    }
-
-    .board-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .not-title-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .list_bt_sub {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 0;
-    }
-
-    .list_bt_sub li {
-        box-sizing: border-box;
-        width: 100%;
-        height: 50px;
-        background-color: #046eb8;
-    }
-
-    .list_bt_sub a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: white;
-        padding: 10px 20px;
-        height: 50px;
-        box-sizing: border-box;
-    }
-
-    /* 2026 리뉴얼 notice 끝*/
-
-    .list_bt_sub a:hover {
-        width: 100%;
-        background-color: #35458c;
-        /* 버튼 호버시 배경색 변경 */
-    }
-
-    .list_bt_sub a h5 {
-        margin: 0;
-        /* h4의 마진 제거 */
-        /* h4의 나머지 스타일을 설정할 수 있습니다. */
-    }
-
-    .business_sect_mobile {
-        display: none;
-    }
-
-    /*2024.07.16 notice 수정*/
-    /*공통*/
-    .main_intro .list_intro {
-        width: 100% !important;
-    }
-
-    .notice_in3 {
-        flex: 10;
+    
+.list_bt_main li {
+  background-color: #181d61;
+  width: 170px;
+  height: 50px;  
+  margin-bottom: 8px; /* 추가된 부분: 각 항목 사이에 여백을 추가합니다 */
+  margin-right: 10px; /* 각 아이템 사이에 여백을 추가합니다 */
+  flex: 0 0 calc(50% - 10px); /* 아이템의 너비를 50%로 설정하고 여백을 조절합니다 */
+}
+    
+    .list_bt_main .list_bt_main_atag {
+      display: flex; /* 내부 요소를 수평으로 정렬합니다 */
+      align-items: center; /* 내부 요소를 수직 중앙 정렬합니다 */
+      padding: 0px 0px 0px 10px; /* 내부 여백을 지정합니다 */
+      text-decoration: none;
+      color: #ffffff;
     }
 
 
-
-    /*a링크 공통*/
-    .notice3_a_link {
-        height: 245px;
-        overflow: hidden;
-        background: #fff;
+    .new_header {
+          width: 100%;
+    }
+  
+    .content.main_intro {
+    width="100%;"
+    background-color: #181d61;
+}
+    
+ 
+    .notice-name strong{
+      color: white;
+      margin:0 auto;
     }
 
-    .notice3_a_link a:first-of-type {
-        margin-top: 5px;
+    
+    
+    .notice-intro {
+    	font-size: 16px;
+      margin:0 auto;
+    }
+    
+    
+    .query-field{
+    	width: 
+          150px;
     }
 
-
-
-
-    /*notice3*/
-    .tab_menu {
-        display: block;
+    .myreg_form_contact li{
+      padding: 0;
+      width: 0;
     }
-
-    .list_bt_main .notice_title {
-        /*notice3 em 공통*/
-        font-style: normal;
-        display: flex;
-        padding: 10px 10px;
-        color: #fff;
-        font-size: 20px;
-        background: #181D61;
-        width: 100%;
-        text-align: center;
-        display: block;
-        margin: 30px auto 20px;
+    .main_intro .list_intro{
+    	margin: 0 auto;
+      padding-top: 10%;
+      padding-bottom: 10%;
     }
-
-    /*notice_in3번_1*/
-    .notice_in3_1_txt {
-        display: flex;
-        gap: 5px;
+        .button-container-main-Links-mobile{
+  		display:block;
+  }
+    
+    /*notice*/
+    .notice_in_all .notice_title {
+    background: #046EB8;
+    color: #fff;
+    font-weight:blod;
+    margin-top:30px !important;
+    margin-bottom:20px;}
+    
+    .notice3_txt1 {color: #fff;}
+    /*notice_in2번*/
+    .notice_in2_img{
+      background:url(/img_up/shop_pds/koreasafeaud/design/2024/ju-yo-sil-jeok.png) no-repeat center center;
+      width:300px;height:600px;
     }
-
-    .notice3_txt1 {
-        font-size: 18px;
-        color: #046EB8;
-        font-weight: 600;
-        text-align: center;
-        display: block;
-        margin-bottom: 10px;
-        font-style: normal;
-    }
-
-    /*i 태그 전체*/
-
-    .notice_txt1_1 {
-        flex: 1;
-    }
-
-    .notice_txt1_1 a {
-        display: block;
-        color: #444;
-        background: #fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        font-size: 14px;
-    }
-
-    .notice_txt1_1 a:hover {
-        color: #046EB8 !important;
-    }
-
-    .notice_txt1_2 {
-        flex: 1;
-    }
-
-    .notice_txt1_2 a {
-        display: block;
-        color: #444;
-        background: #Fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        font-size: 14px;
-        ;
-    }
-
-    .notice_txt1_2 a:hover {
-        color: #046EB8 !important;
-    }
-
-    .notice_txt1_3 {
-        flex: 1;
-    }
-
-    .notice_txt1_3 a {
-        display: block;
-        color: #444;
-        background: #fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        ;
-        font-size: 14px;
-    }
-
-    .notice_txt1_3 a:hover {
-        color: #046EB8 !important;
-    }
-
-    /*notice_in3번_2*/
-    .notice_in3_2_txt {
-        display: flex;
-        gap: 5px;
-    }
-
-    .notice3_txt1 {
-        font-size: 18px;
-        color: #046EB8;
-        font-weight: 600;
-        text-align: center;
-        display: block;
-        margin-bottom: 10px;
-        font-style: normal;
-    }
-
-    /*i 태그 전체*/
-
-    .notice_txt2_1 {
-        flex: 1;
-    }
-
-    .notice_txt2_1 a {
-        display: block;
-        color: #444;
-        background: #fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        ;
-        font-size: 14px;
-    }
-
-    .notice_txt2_1 a:hover {
-        color: #046EB8 !important;
-    }
-
-    .notice_txt2_2 {
-        flex: 1;
-    }
-
-    .notice_txt2_2 a {
-        display: block;
-        color: #444;
-        background: #fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        ;
-        font-size: 14px;
-    }
-
-    .notice_txt2_2 a:hover {
-        color: #046EB8 !important;
-    }
-
-    .notice_txt2_3 {
-        flex: 1;
-    }
-
-    .notice_txt2_3 a {
-        display: block;
-        color: #444;
-        background: #fff;
-        padding: 5px 10px;
-        padding-left: 15px;
-        font-size: 14px;
-        ;
-    }
-
-    .notice_txt2_3 a:hover {
-        color: #046EB8 !important;
-    }
-
-    #tab1 {
-        margin-top: 50px;
-    }
-
-    #tab1 img {
-        transform: translateY(110px)
-    }
-
-    /*mobile 3번*/
-
-    .business_sect_mobile {
-        padding: 50% 0 160% !important;
-        margin: 0 auto !important;
-    }
-
-    .sect3R>div {
-        margin-left: 0 !important;
-    }
-
-    .business_sect_mobile .notice_title {
-        /*notice3 em 공통*/
-        font-style: normal;
-        display: flex;
-        padding: 10px 10px;
-        color: #fff;
-        font-size: 20px;
-        background: #181D61;
-        width: 100%;
-        text-align: center;
-        display: block;
-        margin: 30px auto 20px;
-    }
-
-    .business_sect_mobile .notice3_txt1 {
-        color: #046EB8;
-    }
-
-    .business_sect_mobile .notice3_a_link {
-        height: 265px;
-        overflow: hidden;
-        background: #f6f6f6;
-    }
-
-    .business_sect_mobile a {
-        background: #f6f6f6 !important;
-    }
-
-
-    /* 1300미만 스타일 */
-    @media (max-width: 1300px) {
-        .cont_area.col-4 img {
-            width: 500px;
-            height: 600px;
-            margin-top: 90%;
-            margin-left: -50%;
-        }
-
-        .list_bt_main {
-            display: block;
-            width: 500px;
-        }
-
-        .list_bt_main li {
-            align-items: left;
-        }
-
-        .tab_menu {}
-
-        .new_header {
-            position: absolute;
-            left: 0;
-            top: 0;
-            text-align: center;
-            width: 100%;
-            z-index: 10;
-            background: #fff;
-            padding-bottom: 10px;
-        }
-
-        .toggle_btn {
-            width: 35px;
-            height: 50px;
-            margin: 20px;
-            position: absolute;
-            right: 0;
-            top: 10px;
-            z-index: 999;
-            cursor: pointer;
-        }
-
-        /*notice*/
-        .notice_in_all {
-            grid-template-columns: 1fr;
-            padding: 60px 20px;
-        }
-
-
-        .notice_in3 {
-            margin: 0 20px;
-        }
-
-        .notice_in2_img {
-            width: 100%;
-        }
-
-        .notice3_a_link a:first-of-type {
-            margin-top: 20px;
-        }
-
-
-        .notice3_txt1 {
-            padding: 10px 0;
-        }
-
-        .notice_title {
-            margin-top: 30px !important;
-        }
-
-        /*notice_in2번*/
-        .notice_in2_img {
-            background: url(/img_up/shop_pds/koreasafeaud/design/2024/ju-yo-sil-jeoktab.png) no-repeat center center;
-            width: 600px;
-            height: 700px;
-            margin: 0 auto;
-        }
-
-        /*notice3 */
-        .business_sect {
-            padding: 20% 0 !important;
-        }
-
-        .col-7 {
-            margin-left 20px !important;
-        }
-
-        .cont_area.col-4 img {
-            width: 500px;
-            height: 600px;
-            margin-top: 0% !important;
-            margin-left: -20% !important;
-        }
-    }
-
-    @media (max-width: 950px) {
-
-
-        /*notice3 */
-        .business_sect {
-            padding: 40% 0 !important;
-            padding-bottom: 60% !important;
-            ;
-            padding-left: 0 !important;
-        }
-
-        .col-7 {
-            max-width: 100% !important;
-            display: block !important;
-            padding-right: 0 !important;
-        }
-
-        .col-7-txt {
-            margin-left: 20px !important;
-        }
-
-        .col-7-txt h2 {
-            1rem;
-        }
-
-        .col-7-txt strong {
-            0.8rem;
-        }
-
-        .list_bt_main {
-            margin-left 20px !important;
-        }
-
-        .cont_area.col-4 img {
-            width: 300px;
-            height: 600px;
-            margin-top: 0% !important;
-            margin-left: -15% !important;
-            display: none !important;
-        }
-
-        .list_bt_main {
-            width: 100% !important;
-        }
-
-        .notice3_a_link {
-            height: 280px;
-        }
-
-    }
-
-    /* 모바일 디바이스를 위한 스타일 */
-    @media (max-width: 767px) {
-        .list_bt_sub {
-            flex-direction: column;
-        }
-
-        .list_intro {
-            background-color: #181d61;
-            color: white;
-            width: 100%;
-            margin: 0px;
-        }
-
-        .not-name {
-            color: #fff;
-        }
-
-
-
-        .business_sect_mobile {
-            display: block;
-            position: relative;
-            margin-top: 100px;
-            margin-left: -5%;
-            background-color: white;
-            height: 400px;
-        }
-
-        .business_sect {
-            display: none;
-        }
-
-        .owl-carousel .owl-item img {
-            display: block;
-            width: 1000px;
-            height: 500px;
-            text-align: center;
-        }
-
-        .new_slide_txt {
-            display: none;
-        }
-
-        .list_bt_main .list_bt_main_atag img {
-            width: 15px;
-            height: 15px;
-        }
-
-        .list_bt_main .list_bt_main_atag p {
-            width: 35px;
-            height: 35px;
-        }
-
-        .list_bt_main li {
-            background-color: #181d61;
-            width: 170px;
-            height: 50px;
-            margin-bottom: 8px;
-            /* 추가된 부분: 각 항목 사이에 여백을 추가합니다 */
-            margin-right: 10px;
-            /* 각 아이템 사이에 여백을 추가합니다 */
-            flex: 0 0 calc(50% - 10px);
-            /* 아이템의 너비를 50%로 설정하고 여백을 조절합니다 */
-        }
-
-        .list_bt_main .list_bt_main_atag {
-            display: flex;
-            /* 내부 요소를 수평으로 정렬합니다 */
-            align-items: center;
-            /* 내부 요소를 수직 중앙 정렬합니다 */
-            padding: 0px 0px 0px 10px;
-            /* 내부 여백을 지정합니다 */
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-
-        .new_header {
-            width: 100%;
-        }
-
-        .content.main_intro {
-            width="100%;"
-            background-color: #181d61;
-        }
-
-
-        .notice-name strong {
-            color: white;
-            margin: 0 auto;
-        }
-
-
-
-        .notice-intro {
-            font-size: 16px;
-            margin: 0 auto;
-        }
-
-
-        .query-field {
-            width:
-                150px;
-        }
-
-        .myreg_form_contact li {
-            padding: 0;
-            width: 0;
-        }
-
-        .main_intro .list_intro {
-            margin: 0 auto;
-            padding-top: 10%;
-            padding-bottom: 10%;
-        }
-
-        .button-container-main-Links-mobile {
-            display: block;
-        }
-
-        /*notice*/
-        .notice_in_all .notice_title {
-            background: #046EB8;
-            color: #fff;
-            font-weight: blod;
-            margin-top: 30px !important;
-            margin-bottom: 20px;
-        }
-
-        .notice3_txt1 {
-            color: #fff;
-        }
-
-        /*notice_in2번*/
-        .notice_in2_img {
-            background: url(/img_up/shop_pds/koreasafeaud/design/2024/ju-yo-sil-jeok.png) no-repeat center center;
-            width: 300px;
-            height: 600px;
-        }
-
-
-    }
-
-    @media (max-width: 640px) {
-        .list_intro {
-            margin-top: 300px;
-        }
-    }
+   
+    
+      }
+    
+  @media (max-width: 640px) {
+  .list_intro { margin-top: 300px;}
+  }
 </style>
 
 
 <main>
-    <a href="/bbs/board5_3" class="consulting_icon"><img
-            src="/img_up/shop_pds/koreasafeaud/design/2024/consulting_icon.png">
-        <p>문의하기</p>
-    </a>
-    <!-- PC버전 -->
-    <section class="business_sect " style="background-color:#f6f6f6; padding:10%;padding-bottom:15%;width:100%">
+  <a href="/bbs/board5_3" class="consulting_icon"><img src="/img_up/shop_pds/koreasafeaud/design/2024/consulting_icon.png"><p>문의하기</p></a>
+  <!-- PC버전 -->
+<section class="business_sect " style="background-color:#f6f6f6; padding:10%;padding-bottom:15%;width:100%">
 
-        <div class="sect3R content row" style="text-align:left; margin-top:5%; margin-bottom:5%;">
+<div class="sect3R content row" style="text-align:left; margin-top:5%; margin-bottom:5%;">
 
-            <div class="col-7">
-                <div style="text-align:left; margin-left:-.2%;" class="col-7-txt">
-                    <h2 style="color:#181d61;" class="col-7-txt1"><strong style="font-weight: bold !important;"
-                            class="col-7-txt1">코리아종합안전</strong>은</h2>
-                    <h2 class="col-7-txt1">높은기술력과 신뢰를 바탕으로 설립된</h2>
-                    <h2 class="col-7-txt1"><strong style="font-weight: bold !important;" class="col-7-txt1">산업재해
-                            예방전문기관</strong>입니다</h2>
-                    <p>
-                    </p>
+  <div class="col-7">
+    <div style="text-align:left; margin-left:-.2%;" class="col-7-txt">
+      <h2 style="color:#181d61;" class="col-7-txt1"><strong  style="font-weight: bold !important;"class="col-7-txt1">코리아종합안전</strong>은</h2>
+      <h2 class="col-7-txt1">높은기술력과 신뢰를 바탕으로 설립된</h2>
+      <h2 class="col-7-txt1"><strong  style="font-weight: bold !important;"class="col-7-txt1">산업재해 예방전문기관</strong>입니다</h2>
+        <p>
+        </p>
+    </div>
+<br>
+
+    <div class="tab_menu ">
+      <div class="list_bt_main">
+        <div class="notice_in3">
+          <div class="notice_in3_1">
+            <em class="notice_title">사업분야</em>
+            <div class="notice_in3_1_txt">
+              <div class="notice_txt1_1">
+                <i class="notice3_txt1">산업안전검사</i>
+                <div class="notice3_a_link">              
+                  <a href="/page/sub64">자율안전검사</a>
+                  <a href="/page/sub65">안전밸브분출시험</a>
+                  <a href="/page/sub66">안전인증 대행</a>
+                  <a href="/page/sub68">자율안전확인신고 컨설팅</a>
+                  <a href="/page/plan01">유해위험방지계획서</a>
+                  <a href="/page/sub34">크레인 및 호이스트 제작·설치·유지보수</a>
                 </div>
-                <br>
-
-                <div class="tab_menu ">
-                    <div class="list_bt_main">
-                        <div class="notice_in3">
-                            <div class="notice_in3_1">
-                                <em class="notice_title">사업분야</em>
-                                <div class="notice_in3_1_txt">
-                                    <div class="notice_txt1_1">
-                                        <i class="notice3_txt1">산업안전검사</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/page/sub64">자율안전검사</a>
-                                            <a href="/page/sub65">안전밸브분출시험</a>
-                                            <a href="/page/sub66">안전인증 대행</a>
-                                            <a href="/page/sub68">자율안전확인신고 컨설팅</a>
-                                            <a href="/page/plan01">유해위험방지계획서</a>
-                                            <a href="/page/sub34">크레인 및 호이스트 제작·설치·유지보수</a>
-                                        </div>
-                                    </div>
-                                    <div class="notice_txt1_2">
-                                        <i class="notice3_txt1">건설기계검사</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/page/sub63">타워크레인 검사</a>
-                                            <a href="/page/sub60">타워크레인 등 설치·인상·해체 시 관리감독</a>
-                                            <a href="/page/plan02">비파괴검사</a>
-                                            <a href="/page/sub43">건설기계안전성</a>
-                                            <a href="/page/sub61">건설기계 반입 전 검사</a>
-                                        </div>
-                                    </div>
-                                    <div class="notice_txt1_3">
-                                        <i class="notice3_txt1">건설안전진단</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/page/plan03">중대재해처벌법 이행점검</a>
-                                            <a href="/page/plan04">건설안전진단</a>
-                                            <a href="/page/plan05">자율 안전컨설팅</a>
-                                            <a href="/page/sub69">위험성평가 컨설팅</a>
-                                            <a href="/page/sub67">유해위험방지계획서</a>
-                                            <a href="/page/plan06">안전보건대장</a>
-                                            <a href="/page/sub37">안전보건교육</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notice_in3_2">
-                                <em class="notice_title">고객지원</em>
-                                <div class="notice_in3_2_txt">
-                                    <div class="notice_txt2_1">
-                                        <i class="notice3_txt1">조직안내</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/page/jojicdo">조직도</a>
-                                            <a href="/page/juyogogacsa">주요고객사</a>
-                                            <a href="/page/jeonmun">전문위원</a>
-                                            <a href="/page/location">찾아오시는길</a>
-                                        </div>
-                                    </div>
-                                    <div class="notice_txt2_2">
-                                        <i class="notice3_txt1">장비현황</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/page/testcs">산업안전본부</a>
-                                            <a href="/page/testcs2">건설기계검사부</a>
-                                            <a href="/page/testcs3">건설안전진단부</a>
-                                        </div>
-                                    </div>
-                                    <div class="notice_txt2_2">
-                                        <i class="notice3_txt1">안전자료실</i>
-                                        <div class="notice3_a_link">
-                                            <a href="/bbs/file1">기술자료</a>
-                                            <a href="/page/file3">법령자료</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+              </div>
+              <div class="notice_txt1_2">
+                <i class="notice3_txt1">건설기계검사</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/sub63">타워크레인 검사</a>
+                  <a href="/page/sub60">타워크레인 등 설치·인상·해체 시 관리감독</a>
+                  <a href="/page/plan02">비파괴검사</a>
+                  <a href="/page/sub43">건설기계안전성</a>
+                  <a href="/page/sub61">건설기계 반입 전 검사</a>
                 </div>
+              </div>
+              <div class="notice_txt1_3">
+                <i class="notice3_txt1">건설안전진단</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/plan03">중대재해처벌법 이행점검</a>
+                  <a href="/page/plan04">건설안전진단</a>
+                  <a href="/page/plan05">자율 안전컨설팅</a>
+                  <a href="/page/sub69">위험성평가 컨설팅</a>
+                  <a href="/page/sub67">유해위험방지계획서</a>
+                  <a href="/page/plan06">안전보건대장</a>
+                  <a href="/page/sub37">안전보건교육</a>
+                </div>
+              </div>            
             </div>
-            <div class="cont_area col-4">
-                <div id="tab1" class="cont on mb-5">
-                    <img src="/img_up/shop_pds/koreasafeaud/design/img/20240226/me-in-i-mi-ji4.png">
+          </div>
+          <div class="notice_in3_2">
+            <em class="notice_title">고객지원</em>
+            <div class="notice_in3_2_txt">
+              <div class="notice_txt2_1">
+                <i class="notice3_txt1">조직안내</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/jojicdo">조직도</a>
+                  <a href="/page/juyogogacsa">주요고객사</a>
+                  <a href="/page/jeonmun">전문위원</a>
+                  <a href="/page/location">찾아오시는길</a>
                 </div>
+              </div>
+              <div class="notice_txt2_2">
+                <i class="notice3_txt1">장비현황</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/testcs">산업안전본부</a>
+                  <a href="/page/testcs2">건설기계검사부</a>
+                  <a href="/page/testcs3">건설안전진단부</a>
+                </div>
+              </div>
+              <div class="notice_txt2_2">
+                <i class="notice3_txt1">안전자료실</i>
+                <div class="notice3_a_link">  
+                  <a href="/bbs/file1">기술자료</a>
+                  <a href="/page/file3">법령자료</a>
+                </div>
+              </div>            
             </div>
-
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- 모바일 버전 -->
-    <section class="business_sect_mobile" style="background-color:#white; padding:10%;">
-
-        <div class="sect3R content " style="text-align:left; margin-top:5%; margin-bottom:5%;">
-
-
-            <div style="text-align:left; margin-left:-.2%;">
-                <h3 style="color:#181d61;"><strong style="font-weight: 900;">코리아종합안전</strong>은</h3>
-                <h4 style="letter-spacing:-.2rem;">높은기술력과 신뢰를 바탕으로 설립된</h4>
-                <h4><strong style="font-weight: bold !important;">산업재해 예방전문기관</strong>입니다</h4>
-                <p>
-                </p>
-            </div>
-            <br>
-
-            <div class="tab_menu row" style="width:100%;">
-                <div class="notice_in3">
-                    <div class="notice_in3_1">
-                        <em class="notice_title">사업분야</em>
-                        <div class="notice_in3_1_txt">
-                            <div class="notice_txt1_1">
-                                <i class="notice3_txt1">산업안전검사</i>
-                                <div class="notice3_a_link">
-                                    <a href="/page/sub64">자율안전검사</a>
-                                    <a href="/page/sub65">안전밸브분출시험</a>
-                                    <a href="/page/sub66">안전인증 대행</a>
-                                    <a href="/page/sub68">자율안전확인신고 컨설팅</a>
-                                    <a href="/page/plan01">유해위험방지계획서</a>
-                                    <a href="/page/sub34">크레인 및 호이스트 제작·설치·유지보수</a>
-                                </div>
-                            </div>
-                            <div class="notice_txt1_2">
-                                <i class="notice3_txt1">건설기계검사</i>
-                                <div class="notice3_a_link">
-                                    <a href="/page/sub63">타워크레인 검사</a>
-                                    <a href="/page/sub60">타워크레인 등 설치·인상·해체 시 관리감독</a>
-                                    <a href="/page/plan02">비파괴검사</a>
-                                    <a href="/page/sub43">건설기계안전성</a>
-                                    <a href="/page/sub61">건설기계 반입 전 검사</a>
-                                </div>
-                            </div>
-                            <div class="notice_txt1_3">
-                                <i class="notice3_txt1">건설안전진단</i>
-                                <div class="notice3_a_link">
-                                    <a href="/page/plan03">중대재해처벌법 이행점검</a>
-                                    <a href="/page/plan04">건설안전진단</a>
-                                    <a href="/page/plan05">자율 안전컨설팅</a>
-                                    <a href="/page/sub69">위험성평가 컨설팅</a>
-                                    <a href="/page/sub67">유해위험방지계획서</a>
-                                    <a href="/page/plan06">안전보건대장</a>
-                                    <a href="/page/sub37">안전보건교육</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="notice_in3_2">
-                        <em class="notice_title">고객지원</em>
-                        <div class="notice_in3_2_txt">
-                            <div class="notice_txt2_1">
-                                <i class="notice3_txt1">조직안내</i>
-                                <div class="notice3_a_link">
-                                    <a href="/page/jojicdo">조직도</a>
-                                    <a href="/page/juyogogacsa">주요고객사</a>
-                                    <a href="/page/jeonmun">전문위원</a>
-                                    <a href="/page/location">찾아오시는길</a>
-                                </div>
-                            </div>
-                            <div class="notice_txt2_2">
-                                <i class="notice3_txt1">장비현황</i>
-                                <div class="notice3_a_link">
-                                    <a href="/page/testcs">산업안전본부</a>
-                                    <a href="/page/testcs2">건설기계검사부</a>
-                                    <a href="/page/testcs3">건설안전진단부</a>
-                                </div>
-                            </div>
-                            <div class="notice_txt2_2">
-                                <i class="notice3_txt1">안전자료실</i>
-                                <div class="notice3_a_link">
-                                    <a href="/bbs/file1">기술자료</a>
-                                    <a href="/page/file3">법령자료</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+  </div>
+    </div>
+      <div class="cont_area col-4">
+        <div id="tab1" class="cont on mb-5">
+      		<img src="/img_up/shop_pds/koreasafeaud/design/img/20240226/me-in-i-mi-ji4.png">
         </div>
-    </section>
+    </div>
 
+  </div>
+</section>
 
+  <!-- 모바일 버전 -->
+<section class="business_sect_mobile" style="background-color:#white; padding:10%;">
 
+<div class="sect3R content " style="text-align:left; margin-top:5%; margin-bottom:5%;">
 
+  
+    <div style="text-align:left; margin-left:-.2%;">
+      <h3 style="color:#181d61;"><strong  style="font-weight: 900;">코리아종합안전</strong>은</h3>
+      <h4 style="letter-spacing:-.2rem;">높은기술력과 신뢰를 바탕으로 설립된</h4>
+      <h4><strong  style="font-weight: bold !important;">산업재해 예방전문기관</strong>입니다</h4>
+        <p>	
+        </p>
+    </div>
+<br>
+
+    <div class="tab_menu row" style="width:100%;">
+        <div class="notice_in3">
+          <div class="notice_in3_1">
+            <em class="notice_title">사업분야</em>
+            <div class="notice_in3_1_txt">
+              <div class="notice_txt1_1">
+                <i class="notice3_txt1">산업안전검사</i>
+                <div class="notice3_a_link">              
+                  <a href="/page/sub64">자율안전검사</a>
+                  <a href="/page/sub65">안전밸브분출시험</a>
+                  <a href="/page/sub66">안전인증 대행</a>
+                  <a href="/page/sub68">자율안전확인신고 컨설팅</a>
+                  <a href="/page/plan01">유해위험방지계획서</a>
+                  <a href="/page/sub34">크레인 및 호이스트 제작·설치·유지보수</a>
+                </div>
+              </div>
+              <div class="notice_txt1_2">
+                <i class="notice3_txt1">건설기계검사</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/sub63">타워크레인 검사</a>
+                  <a href="/page/sub60">타워크레인 등 설치·인상·해체 시 관리감독</a>
+                  <a href="/page/plan02">비파괴검사</a>
+                  <a href="/page/sub43">건설기계안전성</a>
+                  <a href="/page/sub61">건설기계 반입 전 검사</a>
+                </div>
+              </div>
+              <div class="notice_txt1_3">
+                <i class="notice3_txt1">건설안전진단</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/plan03">중대재해처벌법 이행점검</a>
+                  <a href="/page/plan04">건설안전진단</a>
+                  <a href="/page/plan05">자율 안전컨설팅</a>
+                  <a href="/page/sub69">위험성평가 컨설팅</a>
+                  <a href="/page/sub67">유해위험방지계획서</a>
+                  <a href="/page/plan06">안전보건대장</a>
+                  <a href="/page/sub37">안전보건교육</a>
+                </div>
+              </div>            
+            </div>
+          </div>
+          <div class="notice_in3_2">
+            <em class="notice_title">고객지원</em>
+            <div class="notice_in3_2_txt">
+              <div class="notice_txt2_1">
+                <i class="notice3_txt1">조직안내</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/jojicdo">조직도</a>
+                  <a href="/page/juyogogacsa">주요고객사</a>
+                  <a href="/page/jeonmun">전문위원</a>
+                  <a href="/page/location">찾아오시는길</a>
+                </div>
+              </div>
+              <div class="notice_txt2_2">
+                <i class="notice3_txt1">장비현황</i>
+                <div class="notice3_a_link">  
+                  <a href="/page/testcs">산업안전본부</a>
+                  <a href="/page/testcs2">건설기계검사부</a>
+                  <a href="/page/testcs3">건설안전진단부</a>
+                </div>
+              </div>
+              <div class="notice_txt2_2">
+                <i class="notice3_txt1">안전자료실</i>
+                <div class="notice3_a_link">  
+                  <a href="/bbs/file1">기술자료</a>
+                  <a href="/page/file3">법령자료</a>
+                </div>
+              </div>            
+            </div>
+          </div>
+        </div>
+</div>
+  </div>
+</section>
+
+  
+  
+ 
     <!-- <section class="re_notice">
         <div class="list_intro" style="width: 100%;">
             <div class="notice_in_all">
@@ -1015,12 +625,12 @@
             </div>
         </div>
     </section> -->
-
-
-
-
-
-    <!--2024.07.16 주석처리
+  
+  
+  
+  
+  
+  <!--2024.07.16 주석처리
 <section class="main_intro_notice" style="background-color:#fff; padding-top:2%; padding-bottom:2%;">
 <div class="content main_intro">
   <div class="list_intro">
@@ -1043,7 +653,7 @@
 </div>
 </section>-->
 
-    <!-- <section class="q_sect">
+   <!-- <section class="q_sect">
    <div class="q_menu_wrap content">
      <span>자주찾는 Quick menu</span>
      <h2>      "코리아종합안전”은 높은 기술력과 신뢰를 바탕으로 설립된<br>
@@ -1058,48 +668,41 @@
      </div>
 
    </section> -->
-
+   
 </main>
 
 
 <!--2024.07.12 group_link 삭제-->
 
 <div class="new" style="display:none">
-    <div class="new_con1">
-        <div class="new_con1_1">
-            <h4>
-                공지사항
-            </h4>
-            {GROUP_bd_lis}
-        </div>
-        <div class="new_con1_2">
-            <img src="/img_up/shop_pds/koreasafeaud/design/img/newcs.png">
-        </div>
-        <div class="new_con1_3">
-            <a href="/bbs/board5_3"><img src="/img_up/shop_pds/koreasafeaud/design/190723/newcs2.png"></a>
-        </div>
+  <div class="new_con1">
+    <div class="new_con1_1">
+      <h4>
+        공지사항
+      </h4>
+      {GROUP_bd_lis}
     </div>
-    <div class="new_con2">
-        <div class="new_con2_2">
+     <div class="new_con1_2">
+      <img src="/img_up/shop_pds/koreasafeaud/design/img/newcs.png">
+    </div>
+     <div class="new_con1_3">
+        <a href="/bbs/board5_3"><img src="/img_up/shop_pds/koreasafeaud/design/190723/newcs2.png"></a>
+    </div>
+  </div>
+   <div class="new_con2">
+     <div class="new_con2_2">
 
-        </div>
-    </div>
-    <ul class="new_con3">
-        <li><a href="http://www.molit.go.kr" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/190723/link1.png" art="국토교통부"></a></li>
-        <li><a href="https://www.msit.go.kr/web/main/main.do" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/190723/link2.png" art="과학기술정보통신부"></a></li>
-        <li><a href="http://www.moel.go.kr/" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo1.png" art="고용노동부"></a></li>
-        <li><a href="https://www.kosha.or.kr/kosha/data/mediaBankMain.do" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo2.png" art="안전보건공단"> </a></li>
-        <li><a href="http://www.moleg.go.kr" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo6.png" art="법 제 처"></a></li>
-        <li><a href="https://360vr.kosha.or.kr" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo9.png" art="안전보건공단 VR전용관"></a></li>
-        <li><a href="https://miis.kosha.or.kr/" target="_blank"><img
-                    src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo8.png" art="유해위험기계기구 종합정보시스템"></a></li>
-    </ul>
+     </div>
+  </div>
+   <ul class="new_con3">
+     <li><a href="http://www.molit.go.kr" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/190723/link1.png" art="국토교통부"></a></li>
+     <li><a href="https://www.msit.go.kr/web/main/main.do" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/190723/link2.png" art="과학기술정보통신부"></a></li>
+     <li><a href="http://www.moel.go.kr/" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo1.png" art="고용노동부"></a></li>
+         <li><a href="https://www.kosha.or.kr/kosha/data/mediaBankMain.do" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo2.png" art="안전보건공단"> </a></li>
+         <li><a href="http://www.moleg.go.kr" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo6.png" art="법 제 처"></a></li>
+      <li><a href="https://360vr.kosha.or.kr" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo9.png" art="안전보건공단 VR전용관"></a></li>
+      <li><a href="https://miis.kosha.or.kr/" target="_blank"><img src="/img_up/shop_pds/koreasafeaud/design/img/2016/logo8.png" art="유해위험기계기구 종합정보시스템"></a></li>
+  </ul>
 </div>
-<!--  2024.07.17 주석처리
+    <!--  2024.07.17 주석처리
 GROUP_contact-->
